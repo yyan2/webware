@@ -1,13 +1,21 @@
 extends layout
 
+
 block content
+  // div1.jade div2.jade div3.jade are inheritances of index.jade
+  // All div4_XXX.jade are generated through the action of button click
+  // Top div including title of the page and a dynamic introduction
   #div1
-    h1 PetOverflow
+    include div1
 
+  // div2 with display of image wall of pets from the database
   #div2
-    p div2 todo:picture wall
+    include div2
 
+  // div3 with buttons to choose the content of the div4
   #div3
-    p div3 todo: navigation bar
+    include div3
 
+  // div4 with the main page, controlled by buttons in div3
   #div4
+       
