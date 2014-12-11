@@ -15,6 +15,9 @@ function renderGalleryPage(){
 }
 function renderQueryPetPage(){
     $('#div4').html(getContent('renderJade/div4_queryPet'));
+    queryButtonHandler();
+    //window.addEventListener("load", , false);
+
 }
 
 function renderInputPetPage(){

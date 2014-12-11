@@ -1,3 +1,43 @@
 //
    Created by Yan on 12/8/2014.
-p querypet
+form#queryPetForm
+   label Type of Pet
+   select(name='pet_type')
+      option any
+      option cat
+      option dog
+   br
+   label Pet color
+   select(name='pet_color')
+      option any
+      option black
+      option white
+      option brown
+      option other
+   br
+   label pet age
+   select(name='pet_age')
+      option any
+      option 0-2
+      option 3-5
+      option 6-8
+      option 9+
+   br
+   label pet gender
+   select(name='pet_gender')
+      option either
+      option male
+      option female
+   br
+   label owner location
+   select(name='pet_ownerLocation')
+      option any
+      option eastern
+      option central
+      option western
+   br
+   input#formSubmitButton(type="submit", value="submit")
+   //reset?
+
+
+
