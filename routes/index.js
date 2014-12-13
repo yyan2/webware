@@ -21,7 +21,7 @@ router.post('/query', function(req, res) {
   var sqlQuery = db.convertQueryToSql(req);
   db.queryDatabase(res, sqlQuery, function(res, dataArray){
     console.log(dataArray);
-    res.render('div4_queryResult', {data: dataArray});
+    res.render('resultTable', {data: dataArray});
   })
 });
 

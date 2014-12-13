@@ -11,8 +11,11 @@ function getContent(fileName){
 }
 
 function renderGalleryPage(){
-    $('#div4').html(getContent('renderJade/div4_gallery'));
+    $.post('/query', [], function(result){
+        $('#div4').html(result);
+    })
 }
+
 function renderQueryPetPage(){
     $('#div4').html(getContent('renderJade/div4_queryPet'));
     queryButtonHandler();
