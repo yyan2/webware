@@ -21,4 +21,8 @@ each item in data
       td #{item.pet_ownerName)
       td #{item.pet_ownerLocation)
       td #{item.pet_ownerContactInfo)
-      td #{item.pet_pictureURL)
+      td
+         if (!item.pet_pictureURL)
+            p no image available
+         else
+            img(src="/public/images/" + item.pet_pictureURL)
