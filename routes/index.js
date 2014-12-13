@@ -1,5 +1,9 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var router = express.Router();
+var fs = require('fs');
+
+var db = require('../db_js/database_yyan');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -12,5 +16,13 @@ router.get('/renderJade/:file', function(req, res){
   res.render(file);
 });
 
+//post handler
+router.post('/query', function(req, res) {
+  var sqlQuery = db.convertQueryToSql(req);
+  db.queryDatabase(res, sqlQuery, function(res, dataArray){
+    console.log(dataArray);
+    res.render('div4_queryResult', {data: dataArray});
+  })
+});
 
 module.exports = router;

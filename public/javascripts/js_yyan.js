@@ -15,9 +15,14 @@ function queryButtonHandler(){
             }
         });
         console.log(JSON.stringify(setQuery));
-        console.log(JSON.stringify($('#queryPetForm').serializeArray()));
+        //console.log(JSON.stringify($('#queryPetForm').serializeArray()));
         console.log(setQuery);
-        console.log($('#queryPetForm').serializeArray());
+        //console.log($('#queryPetForm').serializeArray());
+        $.post('/query', setQuery, function(result){
+            $('#div4').html(result);
+        })
+
+
         //post request
     });
 }
