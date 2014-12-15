@@ -1,42 +1,60 @@
 //
    Created by Yan on 12/8/2014.
-form#queryPetForm
-   label Type of Pet
-   select(name='pet_type')
-      option any
-      option cat
-      option dog
+
+
+   //legend aaa
+#form-container
+   h3 Fill in your preferences
    br
-   label Pet color
-   select(name='pet_color')
-      option any
-      option black
-      option white
-      option brown
-      option other
-   br
-   label pet age
-   select(name='pet_age')
-      option any
-      option <3
-      option 3-5
-      option 6-8
-      option >8
-   br
-   label pet gender
-   select(name='pet_gender')
-      option either
-      option m
-      option f
-   br
-   label owner location
-   select(name='pet_ownerLocation')
-      option any
-      option eastern
-      option central
-      option western
-   br
-   input#formSubmitButton(type="submit", value="submit")
+   form.form-horizontal#queryPetForm(role='form')
+      .form-group
+         label.col-sm-2.control-label Type of Pet:
+         .col-sm-10
+            select.form-control(name='pet_type')
+               option any
+               option cat
+               option dog
+
+      .form-group
+         label.col-sm-2.control-label Pet color:
+         .col-sm-10
+            select.form-control(name='pet_color')
+               option any
+               option black
+               option white
+               option brown
+               option other
+
+      .form-group
+         label.col-sm-2.control-label pet age:
+         .col-sm-10
+            select.form-control(name='pet_age')
+               option any
+               option <3
+               option 3-5
+               option 6-8
+               option >8
+
+      .form-group
+         label.col-sm-2.control-label pet gender:
+         .col-sm-10
+            select.form-control(name='pet_gender')
+               option either
+               option m
+               option f
+
+      .form-group
+         label.col-sm-2.control-label owner location:
+         .col-sm-10
+            select.form-control(name='pet_ownerLocation')
+               option any
+               option eastern
+               option central
+               option western
+      .form-group
+         .col-sm-offset-2.col-sm-8
+            button.btn.btn-default#formSubmitButton(type="submit") See Results!
+            button.btn.btn-danger(type="reset") Reset
    //reset?
 
 
