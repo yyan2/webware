@@ -4,6 +4,7 @@ var router = express.Router();
 var fs = require('fs');
 
 var db = require('../db_js/database_yyan');
+var dbyk = require('../db_js/database_ykarita');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -33,5 +34,9 @@ router.post('/query', function(req, res) {
     res.render('resultTable', {data: dataArray});
   })
 });
+router.get('/petType', dbyk.petTypeChart);
+router.get('/petGender', dbyk.petGenderChart);
+router.get('/petLocation', dbyk.petLocationChart);
+router.get('/petAge', dbyk.petAgeGraph);
 
 module.exports = router;
