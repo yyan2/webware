@@ -1,8 +1,28 @@
-//
-   Created by LinYichen on 12/9/14.
+//jade fragment for displaying three simple buttons and a drop-down button in div3
 
-//a(href='/renderJade/renderGallery') Gallery1
-button#submit_gallery(type='submit') Gallery
-button#submit_queryPet(type='submit') I Want A Pet
-button#submit_inputPet(type='submit') I Have A Pet
-button#submit_statistic(type='submit') Statistic
+//let buttons span the whole page width
+.btn-group.btn-group-justified(role='group')
+
+   //drop-down button
+   .btn-group(role='group')
+      button.btn.btn-primary.dropdown-toggle(type='submit' data-toggle='dropdown' aria-expanded="true") Gallery
+         span.caret
+      ul.dropdown-menu(role='menu')
+         li
+            button.btn.btn-default#submit_queryCats(type='submit') Cats
+         li
+            button.btn.btn-default#submit_queryDogs(type='submit') Dogs
+         li
+            button.btn.btn-default#submit_gallery(type='submit') All
+
+   //simple buttons
+   .btn-group(role='group')
+      button.btn.btn-success#submit_queryPet(type='submit') I Want A Pet
+
+   .btn-group(role='group')
+
+      button.btn.btn-info#submit_inputPet(type='submit') I Have A Pet
+   .btn-group(role='group')
+
+      button.btn.btn-warning#submit_statistic(type='submit') Statistic
+

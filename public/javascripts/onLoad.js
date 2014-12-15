@@ -23,6 +23,18 @@ function renderQueryPetPage(){
 
 }
 
+function renderQueryDogsPage(){
+    $.post('/query', [{"name":"pet_type", "value":"dog"}], function(result){
+        $('#div4').html(result);
+    })
+}
+
+function renderQueryCatsPage(){
+    $.post('/query', [{"name":"pet_type", "value":"cat"}], function(result){
+        $('#div4').html(result);
+    })
+}
+
 function renderInputPetPage(){
     $('#div4').html(getContent('renderJade/div4_inputPet'));
 }
@@ -37,6 +49,9 @@ function start() {
     document.getElementById("submit_queryPet").addEventListener("click",function(){renderQueryPetPage()});
     document.getElementById("submit_inputPet").addEventListener("click",function(){renderInputPetPage()});
     document.getElementById("submit_statistic").addEventListener("click",function(){renderStatisticPage()});
+    document.getElementById("submit_queryCats").addEventListener("click",function(){renderQueryCatsPage()});
+    document.getElementById("submit_queryDogs").addEventListener("click",function(){renderQueryDogsPage()});
+
 
     //load default div4 page
     renderGalleryPage();
