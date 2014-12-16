@@ -22,13 +22,13 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'PetOverFlow' });
 });
 
-///** get images **/
-//router.get('/public/images/:file', function(req, res) {
-//  var file = req.params.file;
-//  var img = fs.readFileSync('public/images/' + file);
-//  res.writeHead(200, {'Content-Type': 'image/jpg'});
-//  res.end(img, 'binary');
-//});
+/** get images **/
+router.get('/public/images/:file', function(req, res) {
+  var file = req.params.file;
+  var img = fs.readFileSync('public/images/' + file);
+  res.writeHead(200, {'Content-Type': 'image/jpg'});
+  res.end(img, 'binary');
+});
 
 
 //jade fragments for render html in div4
@@ -36,21 +36,6 @@ router.get('/renderJade/:file', function(req, res){
   var file = req.params.file;
   res.render(file);
 });
-
-// Use multer to upload image and generate the new path
-//router.use(multer({ dest: './public/images/',
-//  rename: function (fieldname, filename) {
-//    return filename+Date.now();
-//    //return filename;
-//  },
-//  onFileUploadStart: function (file) {
-//    console.log(file.originalname + ' is starting ...')
-//  },
-//  onFileUploadComplete: function (file) {
-//    console.log(file.fieldname + ' uploaded to  ' + file.path)
-//    done=true;
-//  }
-//}));
 
 // Post form data into database including image path
 router.post('/inputData',function (req, res) {
@@ -96,15 +81,7 @@ router.get('/getimg/:file', function(req, res) {
   dbhf.hfangdb(res, req.params.file);
 });
 
-// router for retrieving image from server
-router.get('/public/images/:file', function(req, res){
-  fs.readFile('../public/images/' + req.params.file, "binary", function(error, file) {
 
-    res.writeHead(200, {"Content-Type": "image/jpg"});
-    res.write(file, "binary");
-    res.end();
-  });
-});
 
 
 module.exports = router;
