@@ -77,6 +77,7 @@ h1 {
   width: 95%;
   height: 1000px;
   text-align: center;
+  overflow: auto;
 }
 
 /*.table_div4 {*/
@@ -234,5 +235,7 @@ button {
   background-color: #EBEBEB;
 }
 
-
-
+.tableimage {
+  height: auto;
+  width: 25vw;
+}

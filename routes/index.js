@@ -62,12 +62,14 @@ router.post('/inputData',function (req, res) {
     //console.log(util.inspect({fields: fields, files: files}));
     console.log(fields);
     console.log(fields.petName);
+
+    //generate sql syntax from fields and file name
     var sql = database_ylin.constructInputQuery(fields, fileName);
     console.log(sql);
 
+    //connect to database and do insert query
     db.queryDatabase(res, sql, function(res, dataArray){
-      console.log('finish inserting database');
-      //res.render('resultTable', {data: dataArray});
+      res.render('div4_inputResult');
     });
 
     //sql

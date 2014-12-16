@@ -37,6 +37,7 @@ function renderQueryCatsPage(){
 
 function renderInputPetPage(){
     $('#div4').html(getContent('renderJade/div4_inputPet'));
+    submitInputButtonHandler();
 }
 
 function renderStatisticPage(){
