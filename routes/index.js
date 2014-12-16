@@ -30,6 +30,18 @@ router.get('/public/images/:file', function(req, res) {
   res.end(img, 'binary');
 });
 
+// Load paragraph into dashboard
+router.get('/paragraph/:id', function(req, res){
+  fs.readFile(__dirname +'/../text/text' + req.params.id + '.txt', 'utf8', function(err,data) {// read file
+    if (err) {// something went wrong, send error message
+      res.send("Could not find paragraph");
+      console.log(inspect(err));
+    } else {
+      res.render('paragraph', {paragraph: data, classname: "text" + req.params.id});
+    }
+  });
+});
+
 
 //jade fragments for render html in div4
 router.get('/renderJade/:file', function(req, res){
