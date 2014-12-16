@@ -84,6 +84,8 @@ router.post('/query', function(req, res) {
     res.render('resultTable', {data: dataArray});
   })
 });
+
+//get data for the statistics
 router.get('/petType', dbyk.petTypeChart);
 router.get('/petGender', dbyk.petGenderChart);
 router.get('/petLocation', dbyk.petLocationChart);
