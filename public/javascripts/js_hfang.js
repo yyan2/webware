@@ -4,11 +4,17 @@
 
 var num = 5;
 var topzzz = 5;
+firstMotion();
 function motion() {
     // change picture for a period of time
     setInterval(function() {
+            firstMotion();
+        } 3000);
+};
 
-        var random_array = [];
+
+var firstMotion = function(){
+    var random_array = [];
         /*
 
          the logic here is complex for now..
@@ -46,8 +52,8 @@ function motion() {
 
 
 
-    } 3000);
-};
+    
+}
 
 window.addEventListener("DOMContentLoaded", motion, false);
 
