@@ -59,6 +59,17 @@ router.post('/inputData',function (req, res) {
     console.log('parse');
     var fileName = path.basename(files.userPhoto.path);
     console.log(fileName);
+    //console.log(util.inspect({fields: fields, files: files}));
+    console.log(fields);
+    console.log(fields.petName);
+    var sql = database_ylin.constructInputQuery(fields, fileName);
+    console.log(sql);
+
+    db.queryDatabase(res, sql, function(res, dataArray){
+      console.log('finish inserting database');
+      //res.render('resultTable', {data: dataArray});
+    });
+
     //sql
   });
   console.log('finish uploading form');
