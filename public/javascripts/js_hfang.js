@@ -9,7 +9,7 @@ function motion() {
     // change picture for a period of time
     setInterval(function() {
             firstMotion();
-        } 30000);
+        } 3000);
 };
 
 
@@ -55,5 +55,5 @@ var firstMotion = function(){
     
 }
 
-window.addEventListener("DOMContentLoaded", firstMotion, false);
+//window.addEventListener("DOMContentLoaded", Motion, false);
 
