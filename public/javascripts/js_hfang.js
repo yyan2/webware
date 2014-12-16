@@ -46,7 +46,7 @@ function motion() {
 
 
 
-    }, 3000);
+    }, 1000);
 };
 
 window.addEventListener("DOMContentLoaded", motion, false);
