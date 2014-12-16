@@ -6,6 +6,7 @@ var mysql = require('mysql');
 
 exports.inputData = function(req, res) {
     console.log(req.body);
+    console.log(req.files);
     var connection = mysql.createConnection({
         host: '127.0.0.1',
         user: 'yyan',

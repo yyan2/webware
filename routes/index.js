@@ -43,6 +43,8 @@ router.get('/paragraph/:id', function(req, res){
 });
 
 
+
+
 //jade fragments for render html in div4
 router.get('/renderJade/:file', function(req, res){
   var file = req.params.file;
@@ -74,11 +76,16 @@ router.post('/inputData',function (req, res) {
     console.log('parse');
     var fileName = path.basename(files.userPhoto.path);
     console.log(fileName);
-    //sql
+
+    database_ylin.inputData;
   });
+  res.render();
   console.log('finish uploading form');
   return;
 });
+
+//router.post('/inputData',database_ylin.inputData);
+
 
 //post handler
 router.post('/query', function(req, res) {
