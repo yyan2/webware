@@ -23,10 +23,11 @@ div4 is the container where the most main functions of the web service take plac
 There are 4 different jade files rendered in div4 such as inputPet, inputResult, querypet and statistics.
 There are 4 buttons, which correspond to 4 jade files in div4, will send a request to the server when one of them is clicked.
 
-All jade files rendered in div4 deal with the database in the rous server.
-When the server receives a certain request from the browser, it will call a function to either modify the data or get data from the database.
-Javascript files which take care of the database are in the db_js folder, 
-and the file, which reseive requests, call functions and send responses, is located in the route folder called index.js.
+All jade files are rendered in div4 to deal with the database in the rous server.
+When the server receives certain requests from browsers, it will call a function to either modify the data or grab data from the database.
+Those javascript files which take care of the database are in the db_js folder, 
+and the file which routes browser requests is located in the route folder called index.js.
+
 
 
 The public folder contains files which are executed by browsers or used by users such as image files, stylesheet files, javascript files, etc.
