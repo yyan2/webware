@@ -1,14 +1,14 @@
 /**
  * Created by Yan on 12/11/2014.
  */
+// This is the file that handle buttons in div4_inputPet and div4_queryPet
 
-
-
+// Function for the button "Submit" in div4_inputPet.jade
 function showSuccessMessage(){
     //get request
     $('#div4').html(getContent('renderJade/div4_inputResult'));
 }
-
+// Function for the button "Submit" in div4_inputPet.jade
 function submitInputButtonHandler(){
     $('form#inputPet').submit(function (e){
 
@@ -26,17 +26,13 @@ function submitInputButtonHandler(){
             },
             error :function(err){
                 console.log('error');
-
             }
         });
-
         e.preventDefault();
-
     });
-
 }
 
-
+// Function for the button "Submit" in div4_queryPet.jade
 function queryButtonHandler(){
     console.log('into handler');
     var count = 0;
@@ -56,8 +52,6 @@ function queryButtonHandler(){
         $.post('/query', setQuery, function(result){
             $('#div4').html(result);
         })
-
-
         //post request
     });
 }
