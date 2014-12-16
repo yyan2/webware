@@ -2,7 +2,9 @@ var inspect = require('util').inspect;
 var client = require('mariasql');
 
 
-sqlQueryFirstPart = "select * from pet_info "
+sqlQueryFirstPart = "select * from pet_info "   //set query
+
+//convert query using json format
 exports.convertQueryToSql = function(req){
     var jsonArray = JSON.parse(JSON.stringify(req.body));
     var queryArray = [];

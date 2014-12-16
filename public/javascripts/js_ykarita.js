@@ -1,5 +1,5 @@
 $(function() {
-//function to create piecharts. gets 2 strings and 2 numbers
+//function to create piecharts. gets 2 strings and 2 numbers and the table title
 function generatePieChart(Name1, Name2, num1, num2, dataname){
 	$('#chart').highcharts({
 			chart: {
@@ -103,6 +103,7 @@ function generatePieChart(Name1, Name2, num1, num2, dataname){
     });
 	
 	
+	//Generate a map based on the pet location
 	
 	$('#petLocation').click(function() {
 
@@ -112,7 +113,7 @@ function generatePieChart(Name1, Name2, num1, num2, dataname){
             this.code = this.code.toUpperCase();
 			});
 console.log(data);
-		var mapData1 = Highcharts.maps['countries/us/us-all'];
+		var mapData1 = Highcharts.maps['countries/us/us-all'];	// import us map info
         // Instanciate the map
         var chart = new Highcharts.Map({
 
@@ -169,6 +170,8 @@ console.log(data);
     });
 	$('#chart').highcharts('Map', chart);
     });
+    
+    //generate pet age graph in bar graph
 $('#petAge').click(function() {
 	
 	

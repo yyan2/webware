@@ -36,15 +36,19 @@ res.send(outputArr);
 });
 c.end();
 }
+//Returning pettyepes 
 exports.petTypeChart = function(req, res){
 getPetInfo(req, res, 'SELECT pet_Type FROM pet_info')
 }
+//Returning petgender 
 exports.petGenderChart = function(req, res){
 getPetInfo(req, res, 'SELECT pet_Gender FROM pet_info')
 }
+//Returning petlocation in code: string value: number 
 exports.petLocationChart = function(req, res){
 getPetInfo(req, res, 'SELECT pet_OwnerLocation as code, count(pet_OwnerLocation) as value FROM pet_info Group by pet_OwnerLocation')
 }
+//Returning petage 
 exports.petAgeGraph = function(req, res){
 getPetInfo(req, res, 'SELECT pet_Age FROM pet_info')
 }
