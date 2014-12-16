@@ -6,13 +6,11 @@ var mysql = require('mariasql');
 
 exports.inputData = function(req, res) {
     console.log(req.body);
-    console.log(req.files);
     var connection = mysql.createConnection({
-        host:'localhost',
-        user:'root',
-        password:'1234',
-        database:'CS4241',
-        port:3306
+        host: '127.0.0.1',
+        user: 'yyan',
+        password: 'yyan_pw',
+        db: 'yyan_db'
     });
 
     //connection.query('INSERT INTO pet_test (petName, petType) VALUES (?, ?)',[req.body.petName,req.body.petType],function  (err,result) {

@@ -2,13 +2,18 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var router = express.Router();
 var fs = require('fs');
+var util = require('util');
+var path = require('path');
+
 
 var db = require('../db_js/database_yyan');
 var dbyk = require('../db_js/database_ykarita');
 var dbhf = require('../db_js/database_hfang');
 var database_ylin= require('../db_js/database_ylin');
 
-var multer = require('multer');
+var formidable = require('formidable');
+
+//var multer = require('multer');
 var done = false;
 
 
@@ -33,22 +38,35 @@ router.get('/renderJade/:file', function(req, res){
 });
 
 // Use multer to upload image and generate the new path
-router.use(multer({ dest: './public/images/',
-  rename: function (fieldname, filename) {
-    return filename+Date.now();
-    //return filename;
-  },
-  onFileUploadStart: function (file) {
-    console.log(file.originalname + ' is starting ...')
-  },
-  onFileUploadComplete: function (file) {
-    console.log(file.fieldname + ' uploaded to  ' + file.path)
-    done=true;
-  }
-}));
+//router.use(multer({ dest: './public/images/',
+//  rename: function (fieldname, filename) {
+//    return filename+Date.now();
+//    //return filename;
+//  },
+//  onFileUploadStart: function (file) {
+//    console.log(file.originalname + ' is starting ...')
+//  },
+//  onFileUploadComplete: function (file) {
+//    console.log(file.fieldname + ' uploaded to  ' + file.path)
+//    done=true;
+//  }
+//}));
 
 // Post form data into database including image path
-router.post('/inputData',database_ylin.inputData);
+router.post('/inputData',function (req, res) {
+  var form = new formidable.IncomingForm();
+  form.uploadDir = __dirname + '/../public/images';
+  form.keepExtensions = true;
+
+  form.parse(req, function(err, fields, files) {
+    console.log('parse');
+    var fileName = path.basename(files.userPhoto.path);
+    console.log(fileName);
+    //sql
+  });
+  console.log('finish uploading form');
+  return;
+});
 
 //post handler
 router.post('/query', function(req, res) {
