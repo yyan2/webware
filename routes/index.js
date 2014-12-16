@@ -8,7 +8,6 @@ var path = require('path');
 
 var db = require('../db_js/database_connection');
 var dbyk = require('../db_js/chart_generator');
-var dbhf = require('../db_js/database_hfang');
 // Use formidable to handle file upload
 var formidable = require('formidable');
 
@@ -92,15 +91,5 @@ router.get('/petGender', dbyk.petGenderChart);
 router.get('/petLocation', dbyk.petLocationChart);
 router.get('/petAge', dbyk.petAgeGraph);
 
-// router for getting image file.
-// this router is used by gallery.js
-// this router first create a query on database,
-// then get the picture locatin
-// the database in used is hfang_db
-// create table pet_pic values(pic_id int(8), pic_location varchar(20));
-router.get('/getimg/:file', function(req, res) {
-  //console.log(req.params.file);
-  dbhf.hfangdb(res, req.params.file);
-});
 
 module.exports = router;
