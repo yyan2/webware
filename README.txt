@@ -28,6 +28,14 @@ When the server receives certain requests from browsers, it will call a function
 Those javascript files which take care of the database are in the db_js folder, 
 and the file which routes browser requests is located in the route folder called index.js.
 
-
-
 The public folder contains files which are executed by browsers or used by users such as image files, stylesheet files, javascript files, etc.
+
+========================
+ResearchInsightBrief
+========================
+The website we've created gives people opportunities to find or send a way their pets when they have difficulty keeping their pets.
+Since the US has large amount of population and huge land, it is difficult to find a suitable pet for a person or a suitable person for a pet.
+Our website provides a database to store all pet information that are available for people who are looking for their favorite pets.
+Once an user finds his favorite pet, he can easily contact to the provider and get a new family member.
+On the other hand, the providers can upload the information of their pets such as types, colors, ages, pictures, etc. to our databaes, and just wait for someone to contact them.
+In both situations, our web service reduces the amount of work and time people need to spend to exchange their pets, and provide people opportunity to know new animals which they haven't seen before. 
