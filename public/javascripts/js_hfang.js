@@ -55,5 +55,5 @@ var firstMotion = function(){
     
 }
 
-window.addEventListener("DOMContentLoaded", motion, false);
+//window.addEventListener("DOMContentLoaded", motion, false);
 
