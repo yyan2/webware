@@ -9,7 +9,7 @@ function motion() {
     // change picture for a period of time
     setInterval(function() {
             firstMotion();
-        } 3000);
+        } 30000);
 };
 
 
