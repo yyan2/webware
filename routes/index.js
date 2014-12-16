@@ -17,13 +17,13 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'PetOverFlow' });
 });
 
-/** get images **/
-router.get('/public/images/:file', function(req, res) {
-  var file = req.params.file;
-  var img = fs.readFileSync('public/images/' + file);
-  res.writeHead(200, {'Content-Type': 'image/jpg'});
-  res.end(img, 'binary');
-});
+///** get images **/
+//router.get('/public/images/:file', function(req, res) {
+//  var file = req.params.file;
+//  var img = fs.readFileSync('public/images/' + file);
+//  res.writeHead(200, {'Content-Type': 'image/jpg'});
+//  res.end(img, 'binary');
+//});
 
 
 //jade fragments for render html in div4
