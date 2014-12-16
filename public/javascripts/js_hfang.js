@@ -5,8 +5,6 @@
 var num = 5;
 var topzzz = 5;
 function motion() {
-    //console.log('motion');
-
     // change picture for a period of time
     setInterval(function() {
 
@@ -17,7 +15,7 @@ function motion() {
          I was trying to remove duplication
          and I'm still working on it
          */
-        $('.div2').empty();
+        $('#div2').empty();
         for (i = 0; i < num; i ++) {
             var rand_num = Math.floor(Math.random() * topzzz + 1);
             var isDuplicate = true;
@@ -39,7 +37,7 @@ function motion() {
             xmlHttp.send( null );
             //console.log(xmlHttp.responseText);
             //console.log(random_array[i]);
-            $('.div2').prepend(xmlHttp.responseText);
+            $('#div2').prepend(xmlHttp.responseText);
 
         }
         $('.galleryimage').hide();

@@ -1,26 +1,9 @@
 
-
-
-
-// created by hfang
-
-/*
-
-
-
- */
-
 var express = require('express');
 var router = express.Router();
 var inspect = require('util').inspect;
 var Client = require('mariasql');
 var fs = require('fs');
-//
-///* GET home page. */
-//router.get('/', function(req, res) {
-//    res.render('gallery', { title: 'gallery',scripts: ['javascripts/script.js']});
-//});
-
 
 
 
