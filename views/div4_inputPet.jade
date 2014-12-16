@@ -1,20 +1,16 @@
+// Form to input info about the pet, including function to upload images
+// After user successfully submit the input, the div4 will direct to div4_inputResult.jade
 form#inputPet(enctype="multipart/form-data", action="/inputData", method="post")
  h5#inputPetHeader Input pet form
   span Please fill all the texts in the fields.
  label
   span Pet's name:
   input#petName(type="text", name="petName", placeholder="Put your pet's name")
- //label
- // span Pet's type:
- // input#petType(type="text", name="petType", placeholder="Put your pet's type)
  label
   span Pet's type
   select(name="petType", placeholder="Put your pet's type")
    option(value="cat") Cat
    option(value="dog") Dog
- //label
- // span Pet's color
- // input#petColor(type="text", name="petColor", placeholder="Put your pet's color")
  label
   span Pet's color
   select(name="petColor", placeholder="Put your pet's color")
@@ -33,9 +29,6 @@ form#inputPet(enctype="multipart/form-data", action="/inputData", method="post")
  label
   span Pet's owner name
   input#ownerName(type="text", name="ownerName", placeholder="Put your pet's owner name")
- //label
- // span Pet's owner location
- // input#ownerLocation(type="text", name="ownerLocation", placeholder="Put your pet's owner location")
  label
   span Pet's owner location
   select(name="ownerLocation", placeholder="Put your pet's owner location")
