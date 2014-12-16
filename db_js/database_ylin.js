@@ -2,7 +2,6 @@
  * Created by LinYichen on 12/9/14.
  */
 
-var mysql = require('mariasql');
 
 exports.constructInputQuery = function(fields, fileName) {
     var sql =
@@ -13,5 +12,6 @@ exports.constructInputQuery = function(fields, fileName) {
         + "', '" +fields.selection + "', '" +fields.ownerName + "', '" +
         fields.ownerLocation + "', '" +fields.ownerContactInfo + "', '" +fileName + "'); ";
     return sql;
+
 };
 
