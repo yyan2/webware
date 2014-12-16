@@ -43,7 +43,24 @@ function renderStatisticPage(){
     $('#div4').html(getContent('renderJade/div4_statistics'));
 }
 
+//Loads an individual paragraph
+function changeText(id){
+    var xmlhttp2 = new XMLHttpRequest();
+
+    xmlhttp2.onreadystatechange = function () {
+        if (xmlhttp2.readyState == 4){
+            document.getElementById("instructions" + id).innerHTML = xmlhttp2.responseText;
+
+        }
+    };
+    xmlhttp2.open("GET", "paragraph/" + id, true);
+    xmlhttp2.send();
+}
+
 function start() {
+
+    changeText(1);
+
     //add button listeners in div3
     document.getElementById("submit_gallery").addEventListener("click",function(){renderGalleryPage()});
     document.getElementById("submit_queryPet").addEventListener("click",function(){renderQueryPetPage()});

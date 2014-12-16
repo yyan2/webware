@@ -2,7 +2,7 @@
  * Created by LinYichen on 12/9/14.
  */
 
-var mysql = require('mariasql');
+var mysql = require('mysql');
 
 exports.inputData = function(req, res) {
     console.log(req.body);
