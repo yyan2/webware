@@ -6,10 +6,9 @@ var util = require('util');
 var path = require('path');
 
 
-var db = require('../db_js/database_yyan');
-var dbyk = require('../db_js/database_ykarita');
+var db = require('../db_js/database_connection');
+var dbyk = require('../db_js/chart_generator');
 var dbhf = require('../db_js/database_hfang');
-var database_ylin= require('../db_js/database_ylin');
 
 var formidable = require('formidable');
 
@@ -66,7 +65,7 @@ router.post('/inputData',function (req, res) {
     console.log(fields.petName);
 
     //generate sql syntax from fields and file name
-    var sql = database_ylin.constructInputQuery(fields, fileName);
+    var sql = db.constructInputQuery(fields, fileName);
     console.log(sql);
 
     //connect to database and do insert query
@@ -81,7 +80,6 @@ router.post('/inputData',function (req, res) {
   return;
 });
 
-//router.post('/inputData',database_ylin.inputData);
 
 
 //post handler
