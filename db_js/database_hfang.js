@@ -14,8 +14,6 @@ exports.hfangdb = function (res, number) {
     var output;
     var c = new Client();
 
-
-    //console.log('SELECT pic_location from pet_pic where pic_id = ' + number);
     c.connect({
         host: '127.0.0.1',
         user: 'hfang',

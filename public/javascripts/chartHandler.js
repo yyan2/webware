@@ -4,7 +4,7 @@ function generatePieChart(Name1, Name2, num1, num2, dataname){
 	$('#chart').highcharts({
 			chart: {
 				plotBackgroundColor: null,
-				plotBorderWidth: 1,//null,
+				plotBorderWidth: 1,
 				plotShadow: false
 			},
 			title: {

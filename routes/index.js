@@ -66,6 +66,17 @@ router.post('/inputData',function (req, res) {
   return;
 });
 
+//get all image path from database
+router.get('/queryImagePath', function(req, res) {
+  var getImgPathSql = 'select pet_pictureURL from pet_info;'
+  db.queryDatabase(res, getImgPathSql, function(res, dataArray) {
+    var dataString = JSON.stringify(dataArray);
+    res.writeHead(200, {'content-length': dataString.length, 'Content-Type': 'text/plain'});
+    res.end(dataString, 'utf8');
+  })
+})
+
+
 //post handler
 router.post('/query', function(req, res) {
   var sqlQuery = db.convertQueryToSql(req);
