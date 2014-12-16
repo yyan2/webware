@@ -4,7 +4,6 @@
 
 var num = 5;
 var topzzz = 5;
-firstMotion();
 function motion() {
     // change picture for a period of time
     setInterval(function() {
@@ -54,6 +53,6 @@ var firstMotion = function(){
 
     
 }
-
-//window.addEventListener("DOMContentLoaded", Motion, false);
+window.addEventListener("DOMContentLoaded", firstMotion, false);
+window.addEventListener("DOMContentLoaded", Motion, false);
 
