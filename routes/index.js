@@ -29,7 +29,7 @@ router.get('/public/images/:file', function(req, res) {
   res.end(img, 'binary');
 });
 
-// Load paragraph into dashboard
+// Load paragraph into the introduction field in div1
 router.get('/paragraph/:id', function(req, res){
   fs.readFile(__dirname +'/../text/text' + req.params.id + '.txt', 'utf8', function(err,data) {// read file
     if (err) {// something went wrong, send error message
