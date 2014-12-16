@@ -9,12 +9,8 @@ var path = require('path');
 var db = require('../db_js/database_connection');
 var dbyk = require('../db_js/chart_generator');
 var dbhf = require('../db_js/database_hfang');
-
+// Use formidable to handle file upload
 var formidable = require('formidable');
-
-//var multer = require('multer');
-var done = false;
-
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -41,9 +37,6 @@ router.get('/paragraph/:id', function(req, res){
   });
 });
 
-
-
-
 //jade fragments for render html in div4
 router.get('/renderJade/:file', function(req, res){
   var file = req.params.file;
@@ -59,28 +52,19 @@ router.post('/inputData',function (req, res) {
   form.parse(req, function(err, fields, files) {
     console.log('parse');
     var fileName = path.basename(files.userPhoto.path);
-    console.log(fileName);
-    //console.log(util.inspect({fields: fields, files: files}));
     console.log(fields);
-    console.log(fields.petName);
 
     //generate sql syntax from fields and file name
     var sql = db.constructInputQuery(fields, fileName);
-    console.log(sql);
 
     //connect to database and do insert query
     db.queryDatabase(res, sql, function(res, dataArray){
       res.render('div4_inputResult');
     });
-
-    //sql
   });
-
   console.log('finish uploading form');
   return;
 });
-
-
 
 //post handler
 router.post('/query', function(req, res) {
@@ -97,10 +81,6 @@ router.get('/petGender', dbyk.petGenderChart);
 router.get('/petLocation', dbyk.petLocationChart);
 router.get('/petAge', dbyk.petAgeGraph);
 
-
-
-
-/////
 // router for getting image file.
 // this router is used by gallery.js
 // this router first create a query on database,
@@ -112,8 +92,4 @@ router.get('/getimg/:file', function(req, res) {
   dbhf.hfangdb(res, req.params.file);
 });
 
-
-
-
 module.exports = router;
-
