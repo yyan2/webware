@@ -43,7 +43,7 @@ exports.petGenderChart = function(req, res){
 getPetInfo(req, res, 'SELECT pet_Gender FROM pet_info')
 }
 exports.petLocationChart = function(req, res){
-getPetInfo(req, res, 'SELECT pet_OwnerLocation FROM pet_info')
+getPetInfo(req, res, 'SELECT pet_OwnerLocation as code, count(pet_OwnerLocation) as value FROM pet_info Group by pet_OwnerLocation')
 }
 exports.petAgeGraph = function(req, res){
 getPetInfo(req, res, 'SELECT pet_Age FROM pet_info')
