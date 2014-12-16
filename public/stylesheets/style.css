@@ -56,15 +56,19 @@ h1 {
 }
 
 #div2 {
-  border: 2px solid blanchedalmond;
-  background-color: antiquewhite;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  width: 95%;
-  height: 150px;
-  text-align: center;
+  /*border: 2px solid blanchedalmond;*/
+  /*background-color: antiquewhite;*/
+  /*position: relative;*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  /*margin-top: 5px;*/
+  /*width: 95%;*/
+  /*height: 150px;*/
+  /*text-align: center;*/
+  border: 4px solid #89D7FF;
+  align-text: center;
+  width: auto !important;
+  min-width: 1500px;
 }
 
 #div3 {
@@ -76,6 +80,11 @@ h1 {
   width: 95%;
   height: 50px;
   text-align: center;
+
+
+
+
+
 }
 
 #div4 {
@@ -151,6 +160,7 @@ button {
 .alert {
   text-align: left;
 }
+
 
 #inputPet {
   margin-left: auto;
@@ -243,3 +253,11 @@ button {
   color: #333;
   background-color: #EBEBEB;
 }
+
+
+.galleryimage {
+  height: 300px;
+  width: 300px;
+}
+
+
