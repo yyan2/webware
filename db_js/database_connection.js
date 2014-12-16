@@ -98,6 +98,7 @@ exports.queryDatabase = function (res, queryString, call_function) {
 
 
 //construct query for insert values into database
+// fileName is the path for the uploaded images
 exports.constructInputQuery = function(fields, fileName) {
     var sql =
         'INSERT INTO pet_info ' +
