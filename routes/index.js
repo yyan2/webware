@@ -5,6 +5,7 @@ var fs = require('fs');
 
 var db = require('../db_js/database_yyan');
 var dbyk = require('../db_js/database_ykarita');
+var dbhf = require('../db_js/database_hfang');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -39,4 +40,31 @@ router.get('/petGender', dbyk.petGenderChart);
 router.get('/petLocation', dbyk.petLocationChart);
 router.get('/petAge', dbyk.petAgeGraph);
 
+
+
+
+/////
+// router for getting image file.
+// this router is used by gallery.js
+// this router first create a query on database,
+// then get the picture locatin
+// the database in used is hfang_db
+// create table pet_pic values(pic_id int(8), pic_location varchar(20));
+router.get('/getimg/:file', function(req, res) {
+  //console.log(req.params.file);
+  dbhf.hfangdb(res, req.params.file);
+});
+
+// router for retrieving image from server
+router.get('/public/images/:file', function(req, res){
+  fs.readFile('../public/images/' + req.params.file, "binary", function(error, file) {
+
+    res.writeHead(200, {"Content-Type": "image/jpg"});
+    res.write(file, "binary");
+    res.end();
+  });
+});
+
+
 module.exports = router;
+
