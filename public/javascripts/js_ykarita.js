@@ -136,32 +136,58 @@ $('#petAge').click(function() {
 		var ageinfo = [Age, num];
 		var numNull = 0;
 		console.log(data);
+		var k =0;
         for (var i in data) {
 			if(data[i].pet_Age){
-				Age.push(parseInt(data[i].pet_Age));
-				count++;
-				
-				if(num[count - 1] == null) num[count - 1] = 0;
-				num[count - 1]++;
-				console.log("num:" + num);
-				console.log("num:" + num);
+			k = 0;
+				while (true){
+					if(Age[k] == null){
+						Age.push(parseInt(data[i].pet_Age));
+						if(num[k] == null) num[k] = 0;
+						num[k]++;
+						console.log("num:" + num);
+						console.log("num:" + num);
+						break;
+					}
+					if(Age[k] == data[i].pet_Age){
+						count++;
+						if(num[k] == null) num[k] = 0;
+						num[k]++;
+						console.log("num:" + num);
+						console.log("num:" + num);
+						break;
+					}
+					k++;
+				}
 			}
 			else if (data[i].pet_Age == null) numNull++;
 			console.log("count:" + count);
 			console.log("Age:" + Age);
 			console.log("num:" + num);
         }
-		ageinfo.sort(
+		console.log(ageinfo);
+		ageinfo = ageinfo.sort(
 			function(a,b){
-				var aName = a["Age"];
-				var bName = b["Age"];
-				if( a < b ) return -1;
-				if( a > b ) return 1;
+				var aName = a[0];
+				var bName = b[0];
+				if( aName < bName ) return -1;
+				if( aName > bName ) return 1;
 				return 0;
 			}
 		);	
 		console.log(ageinfo);
-
+		var zero =0;
+		var three =0; 
+		var six =0;
+		var nine = 0;
+		var more = 0;
+		for( var i in Age){
+			if (Age[i] < 3) zero ++;
+			else if (Age[i] < 6) three ++;
+			else if (Age[i] < 9) six ++;
+			else if (Age[i] < 12) nine ++;
+			else more++;
+		}
         $('#chart').highcharts({
             chart : {
                 type : 'column'
@@ -173,7 +199,7 @@ $('#petAge').click(function() {
                 title : {
                     text : 'Age'
                 },
-                categories : Age
+                categories : ['0 ~ 2', '3 ~ 5','6 ~ 8','9 ~ 11','12 ~']
             },
             yAxis : {
                 title : {
@@ -198,7 +224,7 @@ $('#petAge').click(function() {
             series : [{
 
                name : 'Number',
-               data : num
+               data : [zero, three, six, nine, more]
             }]
         });
     });

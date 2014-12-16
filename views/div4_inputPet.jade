@@ -1,1 +1,36 @@
- p inputpet
+form(id="inputPet", enctype="multipart/form-data", action="/inputData", method="post", class="STYLE-NAME")
+ h5#inputPetHeader Input pet form
+  span Please fill all the texts in the fields.
+ label
+  span Pet's name:
+  input#petName(type="text", name="petName", placeholder="Put your pet's name")
+ label
+  span Pet's type:
+  input#petType(type="text", name="petType", placeholder="Put your pet's type")
+ label
+  span Pet's color
+  input#petColor(type="text", name="petColor", placeholder="Put your pet's color")
+ label
+  span Pet's age
+  input#petAge(type="text", name="petAge", placeholder="Put your pet's age")
+ label
+  span Pet's gender:
+  select(name="selection")
+   option(value="M") Male
+   option(value="F") Female
+ label
+  span Pet's owner name
+  input#ownerName(type="text", name="ownerName", placeholder="Put your pet's owner name")
+ label
+  span Pet's owner location
+  input#ownerLocation(type="text", name="ownerLocation", placeholder="Put your pet's owner location")
+ label
+  span Pet's owner contact information
+  input#ownerContactInfo(type="text", name="ownerContactInfo", placeholder="Put your pet's owner contact information")
+ label
+  span Upload your pet's picture
+  input#petPicture(type="file", name="userPhoto")
+ label
+  input#inputPetButton(type="submit", class="button", value="Send", name="submit")
+
+
