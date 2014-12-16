@@ -49,5 +49,5 @@ function motion() {
     }, 3000);
 };
 
-window.addEventListener("load", motion, false);
+window.addEventListener("DOMContentLoaded", motion, false);
 
