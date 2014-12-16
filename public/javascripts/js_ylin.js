@@ -5,6 +5,7 @@
 
 function showSuccessMessage(){
     //get request
+    $('#div4').html(getContent('renderJade/div4_inputResult'));
 }
 
 function submitInputButtonHandler(){
@@ -16,7 +17,9 @@ function submitInputButtonHandler(){
             type: "POST",
             url: '/inputData',
             data: formData,
+            cache: false,
             contentType: false,
+            processData: false,
             success: function(result){
                 showSuccessMessage();
             },
@@ -33,5 +36,6 @@ function submitInputButtonHandler(){
     });
 
 }
+
 
 

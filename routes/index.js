@@ -76,7 +76,7 @@ router.post('/inputData',function (req, res) {
 
     //sql
   });
-  res.render();
+
   console.log('finish uploading form');
   return;
 });

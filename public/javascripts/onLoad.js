@@ -74,8 +74,6 @@ function start() {
     document.getElementById("submit_queryCats").addEventListener("click",function(){renderQueryCatsPage()});
     document.getElementById("submit_queryDogs").addEventListener("click",function(){renderQueryDogsPage()});
 
-    document.getElementById("inputPetButton").addEventListener("click",function(){renderInputResult()});
-
 
     //load default div4 page
     renderGalleryPage();
