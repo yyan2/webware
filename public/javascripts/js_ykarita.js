@@ -105,24 +105,69 @@ function generatePieChart(Name1, Name2, num1, num2, dataname){
 	
 	
 	$('#petLocation').click(function() {
+
+        // Make codes uppercase to match the map data
 		$.get('/petLocation', function(data) {
-			var Location = [];
-			var total = 0;
-			var Eastern = 0.0;
-			var Western = 0.0;
-			var nullflag =0;
-			for (var i in data) {
-				Location.push(data[i].pet_OwnerLocation);
-				total++;
-				if(Location[i] == "eastern") Eastern++;
-				else if (Location[i] == "western") Western++;
-				else nullflag =1;
-			}
-			Eastern = Eastern / total * 100;
-			Western = Western / total * 100;
-			generatePieChart("Eastern", "Western", Eastern, Western, 'Location');
-			if (nullflag == 1) alert("there is a location which is not easter nor western. Fix the database");
-		});
+			$.each(data, function () {
+            this.code = this.code.toUpperCase();
+			});
+console.log(data);
+		var mapData1 = Highcharts.maps['countries/us/us-all'];
+        // Instanciate the map
+        var chart = new Highcharts.Map({
+
+            chart: {
+				renderTo: 'chart'
+			},
+
+            title : {
+                text : 'Pet Location Map'
+            },
+
+            legend: {
+                layout: 'horizontal',
+                borderWidth: 0,
+                backgroundColor: 'rgba(255,255,255,0.85)',
+                floating: true,
+                verticalAlign: 'top',
+                y: 25
+            },
+
+            mapNavigation: {
+                enabled: true
+            },
+
+            colorAxis: {
+                min: 1,
+                type: 'logarithmic',
+                minColor: '#EEEEFF',
+                maxColor: '#000022',
+                stops: [
+                    [0, '#EFEFFF'],
+                    [0.67, '#4444FF'],
+                    [1, '#000022']
+                ]
+            },
+            series : [{
+                animation: {
+                    duration: 1000
+                },
+                data : data,
+                mapData: mapData1,
+                joinBy: ['postal-code', 'code'],
+                dataLabels: {
+                    enabled: true,
+                    color: 'white',
+                    format: '{point.code}'
+                },
+                name: 'Pet Distribution',
+                tooltip: {
+                    pointFormat: '{point.code}: {point.value}'
+                }
+            }]
+        });
+    });
+	$('#chart').highcharts('Map', chart);
     });
 $('#petAge').click(function() {
 	
