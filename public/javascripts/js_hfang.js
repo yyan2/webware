@@ -53,6 +53,6 @@ var firstMotion = function(){
 
     
 }
-window.addEventListener("DOMContentLoaded", firstMotion, false);
+//window.addEventListener("DOMContentLoaded", firstMotion, false);
 window.addEventListener("DOMContentLoaded", Motion, false);
 
